@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>gbp</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="header"></div>
+
+		<div></div>
+
+		<script>
+			// top
+			var childs = '{"childs":[{"name":"なつき","birthday":"2012/2/27","good":10,"bad":5},{"name":"ゆいと","birthday":"2016/1/14","good":2,"bad":2}]}';
+			var json_childs =  $.parseJSON(childs);
+			
+			//history
+			var child = '{"history":[{"accrual_date":"2018/10/2","title":"落書きした","point":-1,"detail":"机など","photo":"https://topmuseum.jp/contents/details/2017/world_press/world_press17.jpg"},{"accrual_date":"2018/10/3","title":"片付けできた","point":1,"detail":"おもちゃ","photo":"https://fotopus.com/pict/event_campiagn/item13/2017/img_473_1488875864.jpg"}]}';
+			var json_child =  $.parseJSON(child);
+			console.log(json_child);
+			$(function() {
+
+			});
+		</script>
+	</body>
+</html>
