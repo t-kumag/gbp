@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-
 use App\Users;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Response;
 
 use Log;
-use Validator; 
-use Response;
-use DB;
+use Validator;
 use Session;
+use DB;
 
 class UsersController extends Controller
 {
@@ -59,7 +59,7 @@ class UsersController extends Controller
         );
 
         if ($validator->fails()) {
-            return Respnose::json([
+            return response()->json([
                     ['status' => 'NG'], 
                     ['errors' => $validator->errors()]
                 ], 401);
@@ -102,28 +102,6 @@ class UsersController extends Controller
             'status' => 'OK'
         ]);
     }
-
-//    /**
-//     * Display the specified resource.
-//     *
-//     * @param  \App\api\Users  $users
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function forget_password()
-//    {
-//        //
-//    }
-//
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param  \App\api\Users  $users
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function password_change(R)
-//    {
-//        //
-//    }
 
     public function test(Request $request) {
         return Response::json([

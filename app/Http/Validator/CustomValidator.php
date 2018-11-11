@@ -4,6 +4,10 @@ namespace App\Http\Validator;
 
 use Illuminate\Validation\Validator;
 
+use Session;
+use DB;
+use Response;
+
 class CustomValidator extends Validator
 {
     /**
@@ -25,6 +29,24 @@ class CustomValidator extends Validator
         }
 
         return true;
+    }
+
+    /**
+     * child_idの家族のuserか確認する
+     *
+     * @param $attrivute
+     * @param $value
+     * @param $parameters
+     * @return bool
+     */
+    public function validateChildUser($attrivute, $value, $parameters)
+    {
+        $user_id = Session::get('user_id');
+        $family = DB::table('families')->where('child_id', '=', $value)->where('user_id', '=', $user_id)->first();
+        if (!empty($family)) {
+            return true;
+        }
+        return false;
     }
 
 }

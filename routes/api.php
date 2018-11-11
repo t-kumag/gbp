@@ -21,9 +21,12 @@ Route::prefix('v1/user')->group(function() {
 });
 
 Route::prefix('v1/families')->middleware(['auth.before'])->group(function() {
-    Route::post('child', 'Api\FamiliesController@child');
+    Route::post('child', 'Api\FamiliesController@add_child');
 });
 
+Route::prefix('v1')->middleware(['auth.before'])->group(function() {
+    Route::post('point', 'Api\PointController@add_point');
+});
 //->middleware(['auth.before'])
 
 //Route::prefix('v1/child')

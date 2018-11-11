@@ -14,6 +14,8 @@ return [
     */
 
     'kana' => 'The :attribute need japanese katakana.',
+    'child_user' => 'The select child is wrong.',
+
     'accepted' => 'The :attribute must be accepted.',
     'active_url' => 'The :attribute is not a valid URL.',
     'after' => 'The :attribute must be a date after :date.',

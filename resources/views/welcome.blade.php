@@ -35,8 +35,20 @@
         <form action="http://localhost:8000/api/v1/families/child" method="post">
             なまえ : <input type="text" name="name" value="子供"><br>
             なまえかな : <input type="text" name="name_kana" value="こども"><br>
-            誕生日：<input type="date" name="birthday">
+            誕生日：<input type="date" name="birthday"><br>
             <input type="submit" value="child">
         </form>
+
+
+        point<br>
+        <form action="http://localhost:8000/api/v1/point" method="post">
+            child1_id : <input type="text" name="child_id" value="1">(1:非対称、6:対象)<br>
+            発生日 : <input type="date" name="accrual_date"><br>
+            タイトル：<input type="text" name="title"><br>
+            詳細：<input type="text" name="detail"><br>
+            point：<input type="number" name="point"><br>
+            <input type="submit" value="point">
+        </form>
+
     </body>
 </html>

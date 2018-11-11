@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-
 use App\Children;
 use App\Families;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Response;
 
 use Log;
 use Validator;
-use Response;
 use DB;
 use Session;
 
@@ -21,7 +21,7 @@ class FamiliesController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function child(Request $request)
+    public function add_child(Request $request)
     {
         $validator = Validator::make($request->all(),
             ['name' => 'required|max:255',
@@ -50,13 +50,5 @@ class FamiliesController extends Controller
         return Response::json([
             'status' => 'OK'
         ]);
-    }
-
-    public function point(Request $request) {
-        $validator = Validator::make($request->all(),
-            ['name' => 'required|max:255',
-                'name_kana' => 'required|kana|max:255',
-                'birthday' => 'required|date']
-        );
     }
 }

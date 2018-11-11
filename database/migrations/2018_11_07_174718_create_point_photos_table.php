@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePointHistoriesTable extends Migration
+class CreatePointPhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreatePointHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('point_histories', function (Blueprint $table) {
+        Schema::create('point_photos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('child_id');
-            $table->date('accrual_date');
-            $table->string('title');
-            $table->text('detail');
-            $table->integer('point');
-            $table->integer('update_user_id');
+            $table->integer('point_history_id');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreatePointHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('point_histories');
+        Schema::dropIfExists('point_photos');
     }
 }
